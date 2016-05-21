@@ -11,26 +11,17 @@ public class TileMap : MonoBehaviour {
 	public int tileSizeZ;
 
 	void Start () {
-		//Tile map Allocation
-		tiles = new int[ tileSizeX, tileSizeZ];
+        GenerateMapData();
 
-		//Tile map Initialization
-		for (int x = 0; x < tileSizeX; x++) 
-		{
-			for (int z = 0; z < tileSizeZ; z++) 
-			{
-				tiles[x,z] = 0;
-			}
-		}
-		//L shaped mountain
-		tiles[1,1] = 2;
+        //L shaped mountain
+        tiles[1,1] = 2;
 		tiles[1,2] = 2;
 		tiles[1,3] = 2;
 		tiles[1,4] = 2;
 		tiles[1,5] = 2;
 		tiles[2,5] = 2;
 		tiles[3,5] = 2;
-
+        //O shaped swamp
 		tiles[8,8] = 1;
 		tiles[8,7] = 1;
 		tiles[7,8] = 1;
@@ -38,7 +29,6 @@ public class TileMap : MonoBehaviour {
 		tiles[7,5] = 1;
 		tiles[7,6] = 1;
 		tiles[8,6] = 1;
-
 
 		//Prefabs instantiation
 		GenerateMapVisual();
@@ -55,4 +45,20 @@ public class TileMap : MonoBehaviour {
 			}
 		}
 	}
+
+    void GenerateMapData()
+    {
+        //Tile map Allocation
+        tiles = new int[tileSizeX, tileSizeZ];
+
+        //Tile map Initialization
+        for (int x = 0; x < tileSizeX; x++)
+        {
+            for (int z = 0; z < tileSizeZ; z++)
+            {
+                tiles[x, z] = 0;
+            }
+        }
+    }
+
 }
