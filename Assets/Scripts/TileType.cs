@@ -5,4 +5,5 @@ using System.Collections;
 public class TileType {
 	public string name;
 	public GameObject tileVisualPrefab;
+    public int enterCost = 1;
 }
